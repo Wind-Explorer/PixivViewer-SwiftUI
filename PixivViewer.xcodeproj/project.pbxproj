@@ -13,6 +13,9 @@
 		ABF263892868A2CE00788805 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF263772868A2CD00788805 /* ContentView.swift */; };
 		ABF2638A2868A2CE00788805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF263782868A2CE00788805 /* Assets.xcassets */; };
 		ABF2638B2868A2CE00788805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF263782868A2CE00788805 /* Assets.xcassets */; };
+		ABF263962868A2FF00788805 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = ABF263952868A2FF00788805 /* SwiftyJSON */; };
+		ABF263982868A32E00788805 /* PixivDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF263972868A32E00788805 /* PixivDataFetcher.swift */; };
+		ABF263992868A32E00788805 /* PixivDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF263972868A32E00788805 /* PixivDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,7 @@
 		ABF2637D2868A2CE00788805 /* PixivViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixivViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF263832868A2CE00788805 /* PixivViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixivViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF263852868A2CE00788805 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		ABF263972868A32E00788805 /* PixivDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixivDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF263962868A2FF00788805 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 			children = (
 				ABF263762868A2CD00788805 /* PixivViewerApp.swift */,
 				ABF263772868A2CD00788805 /* ContentView.swift */,
+				ABF263972868A32E00788805 /* PixivDataFetcher.swift */,
 				ABF263782868A2CE00788805 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -111,6 +117,9 @@
 			dependencies = (
 			);
 			name = "PixivViewer (macOS)";
+			packageProductDependencies = (
+				ABF263952868A2FF00788805 /* SwiftyJSON */,
+			);
 			productName = "PixivViewer (macOS)";
 			productReference = ABF263832868A2CE00788805 /* PixivViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +151,9 @@
 				Base,
 			);
 			mainGroup = ABF263702868A2CD00788805;
+			packageReferences = (
+				ABF263942868A2FF00788805 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = ABF2637E2868A2CE00788805 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF263982868A32E00788805 /* PixivDataFetcher.swift in Sources */,
 				ABF263882868A2CE00788805 /* ContentView.swift in Sources */,
 				ABF263862868A2CE00788805 /* PixivViewerApp.swift in Sources */,
 			);
@@ -185,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF263992868A32E00788805 /* PixivDataFetcher.swift in Sources */,
 				ABF263892868A2CE00788805 /* ContentView.swift in Sources */,
 				ABF263872868A2CE00788805 /* PixivViewerApp.swift in Sources */,
 			);
@@ -450,6 +464,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABF263942868A2FF00788805 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABF263952868A2FF00788805 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABF263942868A2FF00788805 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ABF263712868A2CD00788805 /* Project object */;
 }
