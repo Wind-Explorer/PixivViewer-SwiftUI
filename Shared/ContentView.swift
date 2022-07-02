@@ -17,31 +17,29 @@ struct ContentView: View {
     }
     
     var body: some View {
-        GeometryReader{ geometry in
-        VStack{
-            illust
-            HStack
-            {
-                TextField("Illust ID", text: $illustID)
-                    .disableAutocorrection(true)
-                    .onSubmit {
+        GeometryReader { geometry in
+            VStack {
+                illust
+                HStack {
+                    TextField("Illust ID", text: $illustID)
+                        .disableAutocorrection(true)
+                        .onSubmit {
+                            illust.illustContainer.update(illustID)
+                            Task.init {
+                                await illust.downloadImage()
+                            }
+                        }
+                    Button() {
                         illust.illustContainer.update(illustID)
                         Task.init {
                             await illust.downloadImage()
                         }
                     }
-                Button()
-                {
-                    illust.illustContainer.update(illustID)
-                    Task.init {
-                        await illust.downloadImage()
+                    label: {
+                        Text("Load")
                     }
                 }
-                label :
-                {
-                    Text("Load")
-                }
-            }}
+            }
         }
     }
 }
